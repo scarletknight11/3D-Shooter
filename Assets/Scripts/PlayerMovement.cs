@@ -8,25 +8,34 @@ public class PlayerMovement : MonoBehaviour {
 
     //private CharacterController characterController;
     public float speed = 2f;
+    public float jump = 8f;
+    public float groundDistance = 1.09f;
 
-    // Start is called before the first frame update
-    void Start()
+    Rigidbody rb;
+    bool canDoubleJmp;
+    
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();  
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, groundDistance);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         MovePlayer();
     }
 
     public void MovePlayer()
     {
-       if(Input.GetKey(KeyCode.UpArrow) || (Input.GetKey(KeyCode.W)))
-       {
+        if(Input.GetKey(KeyCode.UpArrow) || (Input.GetKey(KeyCode.W)))
+        {
             transform.Translate(Vector3.forward * -speed * Time.deltaTime);
-       }
+        }
 
         if (Input.GetKey(KeyCode.DownArrow) || (Input.GetKey(KeyCode.S)))
         {
@@ -41,6 +50,25 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
         {
             transform.Translate(Vector3.right * -speed * Time.deltaTime);
+        }
+
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    transform.Translate(Vector3.up * jump * Time.deltaTime);
+        //}
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            if(IsGrounded())
+            {
+                rb.velocity = Vector3.up * jump;
+                canDoubleJmp = true;
+            }
+            else if(canDoubleJmp)
+            {
+                rb.velocity = Vector3.up * jump;
+                canDoubleJmp = false;
+            }
         }
 
     }

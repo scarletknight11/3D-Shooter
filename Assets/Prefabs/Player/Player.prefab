@@ -147,10 +147,8 @@ GameObject:
   - component: {fileID: 1458197380576214053}
   - component: {fileID: 1458197380576214052}
   - component: {fileID: 1458197380576214054}
-  - component: {fileID: 1458197380576214050}
   - component: {fileID: 1458197380576214051}
   - component: {fileID: 1031377697}
-  - component: {fileID: 1031377696}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -236,29 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf83100f3366f949803990b67dfaea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  lockSpeed: 60
-  JumpPower: 8
-  gravity: 9.81
   playerShooter: {fileID: 11041691789433800}
---- !u!143 &1458197380576214050
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458197380576214056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1458197380576214051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,19 +283,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1031377696
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458197380576214056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1458197381247387923
 PrefabInstance:
   m_ObjectHideFlags: 0
