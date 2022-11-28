@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 2f;
     public float jump = 8f;
     public float groundDistance = 1.09f;
+    public GameObject postprocessing;
 
     Rigidbody rb;
     bool canDoubleJmp;
@@ -52,12 +53,22 @@ public class PlayerMovement : MonoBehaviour {
             transform.Translate(Vector3.right * -speed * Time.deltaTime);
         }
 
+        if(Input.GetKey(KeyCode.G))
+        {
+            postprocessing.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            postprocessing.SetActive(false);
+        }
+
         //if (Input.GetKey(KeyCode.Space))
         //{
         //    transform.Translate(Vector3.up * jump * Time.deltaTime);
         //}
 
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if(IsGrounded())
             {

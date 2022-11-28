@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     //public float gravity = 9.81f;
     [Header("Required Performance")]
     public Shooter playerShooter;
+    public Health health;
+    public List<GameObject> disabledWhileDead;
 
     // The character controller component as the player
     //private CharacterController controller;
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     ///// Return:
     ///// void (no return)
     ///// </summary>
+  
     //void Start()
     //{
     //    SetUpCharacterController();
@@ -57,11 +60,27 @@ public class PlayerController : MonoBehaviour
     ///// Return:
     ///// void (no return)
     ///// </summary>
-    //void Update()
-    //{
+    
+    void Update()
+    {
     //    ProcessMovement();
     //    ProcessRotation();
-    //}
+        if(health.currentHealth <= 0)
+        {
+            foreach (GameObject inGameObject in disabledWhileDead)
+            {
+                inGameObject.SetActive(false);
+            }
+            return;
+        }
+        else
+        {
+            foreach (GameObject inGameObject in disabledWhileDead)
+            {
+                inGameObject.SetActive(true);
+            }
+        }
+    }
 
     //Vector3 moveDirection;
 
