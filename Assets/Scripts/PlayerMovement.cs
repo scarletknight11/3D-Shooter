@@ -63,10 +63,6 @@ public class PlayerMovement : MonoBehaviour {
             postprocessing.SetActive(false);
         }
 
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    transform.Translate(Vector3.up * jump * Time.deltaTime);
-        //}
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -81,6 +77,5 @@ public class PlayerMovement : MonoBehaviour {
                 canDoubleJmp = false;
             }
         }
-
     }
 }

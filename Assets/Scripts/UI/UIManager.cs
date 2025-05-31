@@ -11,8 +11,7 @@ using UnityEngine.EventSystems;
 /// A class which manages pages of UI elements
 /// and the game's UI
 /// </summary>
-public class UIManager : MonoBehaviour
-{
+public class UIManager : MonoBehaviour {
 
     [Header("Page Management")]
     [Tooltip("The pages (Panels) managed by the UI Manager")]
@@ -286,6 +285,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
     /// <summary>
     /// Description:
     /// Goes to a page by that page's index

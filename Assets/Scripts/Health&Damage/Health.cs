@@ -9,8 +9,8 @@ using UnityEngine.Events;
 /// 
 /// Implementation Notes: 2D Rigidbodies must be set to never sleep for this to interact with trigger stay damage
 /// </summary>
-public class Health : MonoBehaviour
-{
+public class Health : MonoBehaviour {
+
     [Header("Team Settings")]
     [Tooltip("The team associated with this damage")]
     public int teamId = 0;

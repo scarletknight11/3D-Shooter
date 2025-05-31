@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
     //    ProcessMovement();
     //    ProcessRotation();
+
         if(health.currentHealth <= 0)
         {
             foreach (GameObject inGameObject in disabledWhileDead)
